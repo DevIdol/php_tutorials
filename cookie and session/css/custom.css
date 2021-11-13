@@ -1,0 +1,7 @@
+.row div{
+	border:1px solid black;
+	font-size: large;
+	text-align: center;
+	background: gray;
+	height:300px;
+}
