@@ -18,7 +18,7 @@
         $query ="SELECT * FROM users";
         $result = mysqli_query($connect,$query);
         if(!$result){
-            die('Query Failed'.mysqli_error($result));
+            die('Query Failed'.mysqli_error($connect));
         }
         while($row = mysqli_fetch_assoc($result)){
             $user_id = $row['user_id'];
@@ -52,7 +52,7 @@
         $query = "UPDATE users SET user_role='admin' WHERE user_id=$the_user_id";
         $result = mysqli_query($connect,$query);
         if(!$result){
-            die('Query Failed'.mysqli_error($result));
+            die('Query Failed'.mysqli_error($connect));
         }
         header('Location: users.php');
     }
@@ -63,7 +63,7 @@
         $query = "UPDATE users SET user_role='subscriber' WHERE user_id=$the_user_id";
         $result = mysqli_query($connect,$query);
         if(!$result){
-            die('Query Failed'.mysqli_error($result));
+            die('Query Failed'.mysqli_error($connect));
         }
         header('Location: users.php');
     }
@@ -77,7 +77,7 @@
             $query = "DELETE FROM users WHERE user_id=$the_user_id";
             $result = mysqli_query($connect,$query);
             if(!$result){
-                die('Query Failed'.mysqli_error($result));
+                die('Query Failed'.mysqli_error($connect));
             }
             header('Location: users.php');    
             }

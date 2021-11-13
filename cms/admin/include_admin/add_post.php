@@ -20,7 +20,7 @@
         $result = mysqli_query($connect,$query);
         
         if(!$result){
-            die('Query Failed'.mysqli_error($result));
+            die('Query Failed'.mysqli_error($connect));
         }
         echo "Complete Successfully Upload Your Post" . "<a href='post.php'>View Post</a>";
     }
@@ -42,7 +42,7 @@
             $query = "SELECT * FROM categories";
             $result = mysqli_query($connect,$query);
             if(!$result){
-                die('Query Failed'.mysqli_error($result));
+                die('Query Failed'.mysqli_error($connect));
             }
             while($row=mysqli_fetch_assoc($result)){
                 $cat_id = $row['cat_id'];
@@ -62,7 +62,7 @@
             $query = "SELECT * FROM users WHERE user_role='admin'";
             $result = mysqli_query($connect,$query);
             if(!$result){
-                die('Query Failed'.mysqli_error($result));
+                die('Query Failed'.mysqli_error($connect));
             }
             while($row=mysqli_fetch_assoc($result)){
                 $user_id = $row['user_id'];

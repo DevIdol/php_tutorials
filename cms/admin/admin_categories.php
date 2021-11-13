@@ -56,7 +56,7 @@
                               $query ="SELECT * FROM categories";
                               $result = mysqli_query($connect,$query);
                               if(!$result){
-                                  die('Query Failed' . mysqli_error($result));
+                                  die('Query Failed' . mysqli_error($connect));
                               }
                               while($row = mysqli_fetch_assoc($result)){
                                   $cat_id = $row['cat_id'];

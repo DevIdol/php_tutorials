@@ -16,7 +16,7 @@
         $result = mysqli_query($connect,$query);
         
         if(!$result){
-            die('Query Failed'.mysqli_error($result));
+            die('Query Failed'.mysqli_error($connect));
         }
         echo "Complete Successfully Created Your Account" . "<a href='users.php'>View Post</a>";
     }

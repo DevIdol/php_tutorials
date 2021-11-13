@@ -9,7 +9,7 @@
             $query ="INSERT INTO categories(cat_title) VALUES ('$cat_title')";
             $result = mysqli_query($connect,$query);
             if(!$result){
-                die('Query Failed'.mysqli_error($result));
+                die('Query Failed'.mysqli_error($connect));
             }
         }
     }
@@ -22,7 +22,7 @@
               $query ="DELETE FROM categories WHERE cat_id=$cat_id";
               $result = mysqli_query($connect,$query);
               if(!$result){
-                  die('Query Failed'.mysqli_error($result));
+                  die('Query Failed'.mysqli_error($connect));
               }
               header('Location: admin_categories.php');
           }

@@ -4,7 +4,7 @@
         $query = "SELECT * FROM posts WHERE post_id=$post_id";
         $result=mysqli_query($connect,$query);
         if(!$result){
-            die('Query Failed'.mysqli_error($result));
+            die('Query Failed'.mysqli_error($connect));
         }
         while($row = mysqli_fetch_assoc($result)){
             $post_title = $row['post_title'];
@@ -48,7 +48,7 @@
         $result = mysqli_query($connect,$query);
         
         if(!$result){
-            die('Query Failed'.mysqli_error($result));
+            die('Query Failed'.mysqli_error($connect));
         }
     }
 
@@ -68,7 +68,7 @@
                 $query ="SELECT * FROM categories";
                 $result = mysqli_query($connect,$query);
                 if(!$result){
-                    die('Query Failed'.mysqli_error($result));
+                    die('Query Failed'.mysqli_error($connect));
                 }
                 while($row = mysqli_fetch_assoc($result)){
                     $cat_id = $row['cat_id'];

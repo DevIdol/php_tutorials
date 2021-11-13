@@ -5,7 +5,7 @@
                                 $query ="UPDATE categories SET cat_title='$cat_title' WHERE cat_id=$cat_id";
                                 $result = mysqli_query($connect,$query);
                                 if(!$result){
-                                    die('Query Failed'.mysqli_error($result));
+                                    die('Query Failed'.mysqli_error($connect));
                                 }
                             }
                         ?>
@@ -18,7 +18,7 @@
                                 $query = "SELECT * FROM categories WHERE cat_id=$cat_id";
                                 $result = mysqli_query($connect,$query);
                                 if(!$result){
-                                    die('Query Failed'.mysqli_error($result));
+                                    die('Query Failed'.mysqli_error($connect));
                                 }
                                 while($row = mysqli_fetch_assoc($result)){
                                     $cat_id = $row['cat_id'];

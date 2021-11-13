@@ -19,7 +19,7 @@
         $query ="SELECT * FROM comment";
         $result = mysqli_query($connect,$query);
         if(!$result){
-            die('Query Failed'.mysqli_error($result));
+            die('Query Failed'.mysqli_error($connect));
         }
         while($row = mysqli_fetch_assoc($result)){
             $comment_id = $row['comment_id'];
@@ -39,7 +39,7 @@
             $query = "SELECT * FROM posts WHERE post_id=$comment_post_id";
             $select_post_id_query = mysqli_query($connect,$query);
             if(!$select_post_id_query){
-                die('Query Failed'.mysqli_error('$connect'));
+                die('Query Failed'.mysqli_error($connect));
             }
             while($row = mysqli_fetch_assoc($select_post_id_query)){
                 $post_id = $row['post_id'];
@@ -76,7 +76,7 @@
         $query = "UPDATE comment SET comment_status='unapproved' WHERE comment_id=$comment_id";
         $result = mysqli_query($connect,$query);
         if(!$result){
-            die('Query Failed'.mysqli_error($result));
+            die('Query Failed'.mysqli_error($connect));
         }
         header('Location: comment.php');
     }
@@ -87,7 +87,7 @@
         $query = "UPDATE comment SET comment_status='approved' WHERE comment_id=$comment_id";
         $result = mysqli_query($connect,$query);
         if(!$result){
-            die('Query Failed'.mysqli_error($result));
+            die('Query Failed'.mysqli_error($connect));
         }
         header('Location: comment.php');
     }
@@ -99,7 +99,7 @@
         $query = "DELETE FROM comment WHERE comment_id=$comment_id";
         $result = mysqli_query($connect,$query);
         if(!$result){
-            die('Query Failed'.mysqli_error($result));
+            die('Query Failed'.mysqli_error($connect));
         }
         header('Location: comment.php');
     }
